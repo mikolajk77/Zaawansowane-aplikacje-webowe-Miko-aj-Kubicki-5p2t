@@ -4,6 +4,8 @@ import Gallery from './components/Gallery'
 import Footer from './components/footer'
 import AddPhotoModal from './components/AddPhotoModal'
 import FiltersOffcanvas from './components/FiltersOffcanvas'
+import PhotoModal from './components/PhotoModal'
+import './app.css'
 function App() {
 return (
   <>
@@ -55,6 +57,7 @@ Dodaj zdjęcie
 <Footer />
 <AddPhotoModal />
 <FiltersOffcanvas />
+<PhotoModal />
 </div>
 </>
 )
