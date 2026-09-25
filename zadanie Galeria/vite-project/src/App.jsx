@@ -1,3 +1,8 @@
+import Navbar from './components/Navbar'
+import CategoryBar from './components/CategoryBar'
+import Gallery from './components/Gallery'
+import Footer from './components/footer'
+import AddPhotoModal from './components/AddPhotoModal'
 function App() {
 return (
   <>
@@ -43,7 +48,11 @@ Dodaj zdjęcie
 </header>
 <main className="container">
 <CategoryBar />
+
+<Gallery />
 </main>
+<Footer />
+<AddPhotoModal />
 </div>
 </>
 )
