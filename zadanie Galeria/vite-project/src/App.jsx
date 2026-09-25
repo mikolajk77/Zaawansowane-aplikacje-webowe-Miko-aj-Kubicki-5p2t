@@ -41,6 +41,9 @@ Dodaj zdjęcie
 </div>
 </div>
 </header>
+<main className="container">
+<CategoryBar />
+</main>
 </div>
 </>
 )
