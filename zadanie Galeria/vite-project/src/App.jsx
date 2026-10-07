@@ -1,14 +1,17 @@
-import Navbar from './components/Navbar'
-import CategoryBar from './components/CategoryBar'
-import Gallery from './components/Gallery'
-import Footer from './components/footer'
-import AddPhotoModal from './components/AddPhotoModal'
-import FiltersOffcanvas from './components/FiltersOffcanvas'
-import PhotoModal from './components/PhotoModal'
-import './app.css'
+import { useState } from 'react'
+import Navbar from './components/Navbar.jsx'
+import CategoryBar from './components/CategoryBar.jsx'
+import Gallery from './components/Gallery.jsx'
+import AddPhotoModal from './components/AddPhotoModal.jsx'
+import FiltersOffcanvas from './components/FiltersOffcanvas.jsx'
+import Footer from './components/Footer.jsx'
+import photos from './data/photos.json'
+import './App.css'
 function App() {
+   const [zdjecia, setZdjecia] = useState(photos)
 return (
   <>
+  
   <Navbar />
 <div className="container mt-4">
   
@@ -52,7 +55,7 @@ Dodaj zdjęcie
 <main className="container">
 <CategoryBar />
 
-<Gallery />
+<Gallery zdjecia={zdjecia} />
 </main>
 <Footer />
 <AddPhotoModal />
