@@ -1,17 +1,4 @@
-const KATEGORIE = [
-  { value: 'gory', label: 'Góry' },
-  { value: 'morze', label: 'Morze' },
-  { value: 'miasto', label: 'Miasto' },
-]
-
-// Ten sam stan aktywnaKategoria co w CategoryBar — offcanvas to tylko
-// drugi widok na ten sam filtr, nie osobny stan. Zaznaczenie kategorii
-// zawęża widok wyłącznie do niej, ponowny klik wraca do "wszystkie".
-function FiltersOffcanvas({ aktywna, onWybierz }) {
-  function przelacz(kategoria) {
-    onWybierz(aktywna === kategoria ? 'wszystkie' : kategoria)
-  }
-
+function FiltersOffcanvas() {
   return (
     <div
       className="offcanvas offcanvas-start"
@@ -32,22 +19,26 @@ function FiltersOffcanvas({ aktywna, onWybierz }) {
       </div>
 
       <div className="offcanvas-body">
-        <p className="text-body-secondary">Zaznacz kategorię, którą chcesz zobaczyć:</p>
+        <p className="text-body-secondary">Zaznacz kategorie, które chcesz zobaczyć:</p>
 
-        {KATEGORIE.map(kategoria => (
-          <div className="form-check" key={kategoria.value}>
-            <input
-              className="form-check-input"
-              type="checkbox"
-              id={`filtr-${kategoria.value}`}
-              checked={aktywna === kategoria.value || aktywna === 'wszystkie'}
-              onChange={() => przelacz(kategoria.value)}
-            />
-            <label className="form-check-label" htmlFor={`filtr-${kategoria.value}`}>
-              {kategoria.label}
-            </label>
-          </div>
-        ))}
+        <div className="form-check">
+          <input className="form-check-input" type="checkbox" id="filtrGory" defaultChecked />
+          <label className="form-check-label" htmlFor="filtrGory">
+            Góry
+          </label>
+        </div>
+        <div className="form-check">
+          <input className="form-check-input" type="checkbox" id="filtrMorze" defaultChecked />
+          <label className="form-check-label" htmlFor="filtrMorze">
+            Morze
+          </label>
+        </div>
+        <div className="form-check">
+          <input className="form-check-input" type="checkbox" id="filtrMiasto" defaultChecked />
+          <label className="form-check-label" htmlFor="filtrMiasto">
+            Miasto
+          </label>
+        </div>
 
         <button
           type="button"
